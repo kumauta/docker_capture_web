@@ -22,6 +22,7 @@ def args_parser():
     parser.add_argument('url', help='specify URL')
     parser.add_argument('filename', help='specify capture image filename')
     parser.add_argument('-w', help="specify window size like 1200x800", dest="window_size", type=str)
+    parser.add_argument('-h', help="specify screen shot height like 800", dest="window_height", type=str)
     parser.add_argument('--ua', help="specify user-agent", dest="user_agent", type=str)
     parser.add_argument('--wait', help="specify wait seconds after scroll", dest="wait", type=float, default=0.2)
     parser.add_argument('-v', help="set LogLevel to INFO", dest="log_info", action="store_true")
@@ -81,6 +82,10 @@ def capture_full_screenshot(url, filename, window_size=None, user_agent=None, wa
 
 
 def capture_screen_area(driver: webdriver.Chrome, filename, client_info: ClientInfo, wait):
+    logger.info("1 -----------------------------")
+    logger.info(client_info.full_height)
+    logger.info(client_info.window_height)
+    logger.info("2 -----------------------------")
     for y_pos in range(0, client_info.full_height - client_info.window_height, 300):
         scroll_to(driver, 0, y_pos)
         sleep(wait or 0.2)
