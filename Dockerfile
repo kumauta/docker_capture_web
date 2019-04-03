@@ -1,5 +1,5 @@
-FROM python:3.6.4
-MAINTAINER mokemokechicken@gmail.com
+FROM python:3.6.8
+LABEL maintainer="nogami.s@gmail.com"
 
 WORKDIR /tmp
 
