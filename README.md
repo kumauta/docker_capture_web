@@ -55,6 +55,7 @@ positional arguments:
 optional arguments:
   -h, --help       show this help message and exit
   -w WINDOW_SIZE   specify window size like 1200x800
+  -c CROP_AREA     specify image crop area like 0,0,100,100 (left,upper,right,lower)
   --ua USER_AGENT  specify user-agent
   --wait WAIT      specify wait seconds after scroll
   -v               set LogLevel to INFO
